@@ -1,0 +1,55 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dff9fb;
+}
+
+.container {
+    width: 400px;
+    height: 300px;
+    /* 设置空间立体效果，人眼离屏幕的距离 */
+    perspective: 800px;
+}
+
+.front,
+.back {
+    width: 400px;
+    height: 300px;
+    font-size: 3rem;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 300px;
+    /* 设置背面看不见属性 */
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1.5s;
+}
+
+.front {
+    background-color: #686de0;
+}
+
+.back {
+    background-color: #badc58;
+    transform: rotateY(180deg);
+}
+
+.container:hover .front {
+    transition: 1.5s;
+    transform: rotateY(-180deg);
+}
+
+.container:hover .back {
+    transition: 1.5s;
+    transform: rotateY(0deg);
+}
